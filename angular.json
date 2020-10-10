@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angularHw6"
+    }
+  },
+  "defaultProject": "angularHw6",
+  "cli": {
+    "analytics": "c2824f6d-f301-4c9a-886a-1ca4fa6b37e5"
+  }
 }

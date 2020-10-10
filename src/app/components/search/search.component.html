@@ -1,0 +1,23 @@
+<form 
+  [formGroup]="form" 
+  (keyup)="getResultGoogle(form)" 
+  [ngStyle]="{
+    'border-bottom-left-radius': results && results[1] && results[1].length ? '0': '24px',
+    'border-bottom-right-radius': results && results[1] && results[1].length ? '0': '24px'
+  }" 
+  >
+  <img src="assets/iconSearch.png" />
+  <input formControlName="query" [ngStyle]="{'border-bottom': results && results[1] && results[1].length ? '1px solid #dfe1e5': '0' }"/>
+</form>
+<div *ngIf="results && results[1].length">
+  <ul class="items">
+    
+    <li class="item" *ngFor="let result of results[1]" >
+      <div>
+        <img src="assets/iconSearch.png" />
+        <span class="result" [innerHTML]="result|searchUser:query"></span>
+      </div>
+    </li>
+  </ul>
+</div>
+
